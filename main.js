@@ -44,6 +44,7 @@ $(document).ready(function(){
   // FINE stampa nome e cognome studenti
   // INIZIO aggiunta nuovo studente tramite prompt
    // salvo prompt nome
+
    var nome = prompt("inserisci nome");
    console.log(nome);
    // salvo prompt cognome
@@ -60,4 +61,23 @@ $(document).ready(function(){
    })
    console.log(studenti);
   // FINE aggiunta nuovo studente tramite prompt
+  // INIZIO creazione blocchi studenti tramite handlebars
+  //INIZIO OPERAZIONI HANDLEBARS
+   // creo var associata all'html dentro #mex-template
+    var source = $('.students-template').html();
+    // faccio analizzare il suo contenuto da Handlebars
+    var template = Handlebars.compile(source);
+    // attribuisco il messaggio dell'input a "mex"
+    var context = {
+      "name": nome,
+      "surname": cognome,
+      "age" : eta
+      // "classeMessaggio": "chat-main-bloc-int",
+      // "mex": "ok"
+    };
+    // salvo il valore dell'input all'interno di handlebars
+    var html = template(context);
+    $("body").append(html);
+  //FINE OPERAZIONI HANDLEBARS
+
 });
