@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  // INIZIO PRIMA PARTE
+  // INIZIO stampa dati di uno studente
      // creo un oggetto con dati studente Luca
      var luca = {
        "nome":"Luca",
@@ -10,8 +10,8 @@ $(document).ready(function(){
      for (var dati in luca){
        console.log(dati + " : " +luca[dati]);
      }
-  // FINE PRIMA PARTE
-  // INIZIO SECONDA PARTE
+  // FINE stampa dati di uno studente
+  // INIZIO stampa nome e cognome studenti
   // creo elenco studenti
      var studenti = [{
        "nome" : "Carlo",
@@ -39,8 +39,25 @@ $(document).ready(function(){
       // salvo il cognome di ogni studente ciclato
       var surnameStud = eachStud.cognome;
       console.log(nameStud + " " + surnameStud);
-      
-    }
-  // FINE SECONDA PARTE
 
+    }
+  // FINE stampa nome e cognome studenti
+  // INIZIO aggiunta nuovo studente tramite prompt
+   // salvo prompt nome
+   var nome = prompt("inserisci nome");
+   console.log(nome);
+   // salvo prompt cognome
+   var cognome = prompt("inserisci cognome");
+   console.log(cognome);
+   // salvo prompt età
+   var eta = parseInt(prompt("inserisci età"));
+   console.log(eta);
+   // creo push coi dati inseriti dall'utente
+   studenti.push({
+     "nome": nome,
+     "cognome": cognome,
+     "eta": eta
+   })
+   console.log(studenti);
+  // FINE aggiunta nuovo studente tramite prompt
 });
